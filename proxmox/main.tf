@@ -5,11 +5,11 @@ resource "proxmox_vm_qemu" "node" {
     # Template to use
     target_node = "hv01"
     full_clone = true
-    clone = "ubuntu-2204-lts"
+    clone = "ubuntu-2204-lts-agent"
 
     # Basic VM settings
     # Only set agent to 1 when the cloud image has the qemu-guest-agent installed
-    agent = 0
+    agent = 1
     os_type = "cloud-init"
     cores = 2
     sockets = 1
@@ -40,4 +40,9 @@ resource "proxmox_vm_qemu" "node" {
         network,
         ]
     }
+}
+
+output "node_ip_address" {
+  description = "Current IP Default"
+  value = proxmox_vm_qemu.node.*.default_ipv4_address
 }
