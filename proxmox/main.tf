@@ -40,7 +40,4 @@ resource "proxmox_vm_qemu" "node" {
         network,
         ]
     }
-
-    ipconfig0=dhcp
-
 }
