@@ -1,0 +1,5 @@
+pm_api_url = "<your proxmox api url>"
+pm_tls_insecure = true
+pm_api_token_id = "<your proxmox api token id>"
+pm_api_token_secret = "<your proxmox api token secret>"
+NumberOfVms = 1
